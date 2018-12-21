@@ -16,22 +16,36 @@ public class Cliente {
     private String nome;
     private Integer idade;
     private Sexo sexo;
+    
+    private Telefone[] telefones;
 
     
     /**Método Construtor
      * @param id
      * @param nome
      * @param idade
-     * @param sexo */
-    public Cliente(Integer id, String nome, Integer idade, Sexo sexo) {
+     * @param sexo
+     * @param telefones */
+    public Cliente(Integer id, String nome, Integer idade, Sexo sexo, Telefone[] telefones) {   
         this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.sexo = sexo;
+        this.telefones = telefones;
     }
 
-   /** Método Construtor Vazio */
+    /** Método Construtor Vazio */
     public Cliente() {
+    }
+
+    /** Get e Set de Telefone:
+     * @return  */
+    public Telefone[] getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(Telefone[] telefones) {
+        this.telefones = telefones;
     }
 
    
