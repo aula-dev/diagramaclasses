@@ -16,18 +16,21 @@ public class Endereco {
     private String logradouro;
     private String numero;
     private String bairro;
+    
+    private Cidade cidade;
 
-    /** Método Cosntrutor
+    /** Método Construtor
      * @param id
      * @param logradouro
      * @param numero
-     * @param bairro */
-    
-    public Endereco(Integer id, String logradouro, String numero, String bairro) {
+     * @param bairro
+     * @param cidade */
+    public Endereco(Integer id, String logradouro, String numero, String bairro, Cidade cidade) {
         this.id = id;
         this.logradouro = logradouro;
         this.numero = numero;
         this.bairro = bairro;
+        this.cidade = cidade;
     }
 
     /** Método  Constutor Vazio */
@@ -37,7 +40,7 @@ public class Endereco {
     
     /** Getters e Setters
      * @return  */
-    public Integer getId() {
+    public Integer getId() {    
         return id;
     }
 
@@ -69,16 +72,25 @@ public class Endereco {
         this.bairro = bairro;
     }
 
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {    
+        this.cidade = cidade;
+    }
+
     
     /**Equals e Hash
      * @return  */
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.id);
-        hash = 29 * hash + Objects.hashCode(this.logradouro);
-        hash = 29 * hash + Objects.hashCode(this.numero);
-        hash = 29 * hash + Objects.hashCode(this.bairro);
+        hash = 37 * hash + Objects.hashCode(this.id);
+        hash = 37 * hash + Objects.hashCode(this.logradouro);
+        hash = 37 * hash + Objects.hashCode(this.numero);
+        hash = 37 * hash + Objects.hashCode(this.bairro);
+        hash = 37 * hash + Objects.hashCode(this.cidade);
         return hash;
     }
 
@@ -103,9 +115,13 @@ public class Endereco {
         if (!Objects.equals(this.bairro, other.bairro)) {
             return false;
         }
-        return Objects.equals(this.id, other.id);
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return Objects.equals(this.cidade, other.cidade);
     }
-    
+
+
     
     
     

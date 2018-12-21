@@ -15,46 +15,59 @@ public class Cidade {
     
     private Integer id;
     private String nome;
+    
+    private Endereco endereco;
 
     /**Método Construtor:
      * @param id
-     * @param nome */
-    public Cidade(Integer id, String nome) {
+     * @param nome
+     * @param endereco */
+    public Cidade(Integer id, String nome, Endereco endereco) {
         this.id = id;
         this.nome = nome;
+        this.endereco = endereco;
     }
 
     /**Construtor vazio: */
     public Cidade() {
     }
 
-   
-  /** get e set de cada atributo
-     * @return  */ 
+    
+    /** Getters e Setters
+     * @return  */
     public Integer getId() {
         return id;
-    }
-
-    public String getNome() {
-        return nome;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     
-  /** Equals e hash
-     * @return  */  
+    /** Equals e hash
+     * @return  */ 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.id);
-        hash = 37 * hash + Objects.hashCode(this.nome);
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.nome);
+        hash = 97 * hash + Objects.hashCode(this.endereco);
         return hash;
     }
 
@@ -73,8 +86,15 @@ public class Cidade {
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
-        return Objects.equals(this.id, other.id);
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return Objects.equals(this.endereco, other.endereco);
     }
+
+   
+
     
+ 
     
 }

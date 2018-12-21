@@ -5,6 +5,7 @@
  */
 package diagramaclasse;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -97,20 +98,21 @@ public class Cliente {
         this.endereco = endereco;
     }
 
+    
+    /**Equals e Hash:
+     * @return  */
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 59 * hash + Objects.hashCode(this.id);
-        hash = 59 * hash + Objects.hashCode(this.nome);
-        hash = 59 * hash + Objects.hashCode(this.idade);
-        hash = 59 * hash + Objects.hashCode(this.sexo);
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.id);
+        hash = 47 * hash + Objects.hashCode(this.nome);
+        hash = 47 * hash + Objects.hashCode(this.idade);
+        hash = 47 * hash + Objects.hashCode(this.sexo);
+        hash = 47 * hash + Arrays.deepHashCode(this.telefones);
+        hash = 47 * hash + Objects.hashCode(this.endereco);
         return hash;
     }
 
-    
-    /**Equals e Hash
-     * @param obj
-     * @return  */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -132,10 +134,16 @@ public class Cliente {
         if (!Objects.equals(this.idade, other.idade)) {
             return false;
         }
-        return this.sexo == other.sexo;
+        if (this.sexo != other.sexo) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.telefones, other.telefones)) {
+            return false;
+        }
+        return Objects.equals(this.endereco, other.endereco);
     }
-    
-    
+
+
     
     
     
