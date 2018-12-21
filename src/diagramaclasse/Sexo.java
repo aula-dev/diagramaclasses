@@ -9,6 +9,6 @@ package diagramaclasse;
  *
  * @author Mariana
  */
-public class Sexo {
+public enum Sexo {
     
 }
