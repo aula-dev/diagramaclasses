@@ -10,5 +10,19 @@ package diagramaclasse;
  * @author Mariana
  */
 public enum Sexo {
+    FEMININO,
+    MASCULINO;
+
+    
+    /** Ger dos enums
+     * @return  */
+    public static Sexo getFEMININO() {
+        return FEMININO;
+    }
+
+    public static Sexo getMASCULINO() {
+        return MASCULINO;
+    }
+    
     
 }

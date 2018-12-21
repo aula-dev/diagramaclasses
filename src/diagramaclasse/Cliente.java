@@ -10,5 +10,4 @@ package diagramaclasse;
  * @author Mariana
  */
 public class Cliente {
-    
 }
