@@ -18,6 +18,8 @@ public class Cliente {
     private Sexo sexo;
     
     private Telefone[] telefones;
+    
+    private Endereco endereco;
 
     
     /**Método Construtor
@@ -25,20 +27,27 @@ public class Cliente {
      * @param nome
      * @param idade
      * @param sexo
-     * @param telefones */
-    public Cliente(Integer id, String nome, Integer idade, Sexo sexo, Telefone[] telefones) {   
+     * @param telefones
+     * @param endereco */
+    public Cliente(Integer id, String nome, Integer idade, Sexo sexo, Telefone[] telefones, Endereco endereco) {    
         this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.sexo = sexo;
         this.telefones = telefones;
+        this.endereco = endereco;
     }
 
+    
+    
     /** Método Construtor Vazio */
     public Cliente() {
     }
 
-    /** Get e Set de Telefone:
+    
+    
+    
+    /** Getters e Setters:
      * @return  */
     public Telefone[] getTelefones() {
         return telefones;
@@ -48,10 +57,7 @@ public class Cliente {
         this.telefones = telefones;
     }
 
-   
-    /** getter e setters
-     * @return  */
-    public Integer getId() {
+       public Integer getId() {
         return id;
     }
 
@@ -81,6 +87,14 @@ public class Cliente {
 
     public void setSexo(Sexo sexo) {
         this.sexo = sexo;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+    
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     @Override
