@@ -5,25 +5,30 @@
  */
 package diagramaclasse;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
  *
- * @author Mariana
+ * @author Pedro
  */
 public class Estado {
   private Integer id;
   private String nome;
+  
+  private Cidade[] cidades;
 
   /**Método Construtor:
      * @param id
-     * @param nome */
-    public Estado(Integer id, String nome) {
+     * @param nome
+     * @param cidades */
+    public Estado(Integer id, String nome, Cidade[] cidades) {
         this.id = id;
         this.nome = nome;
+        this.cidades = cidades;
     }
 
-   /** Método Construtor Vazio */
+    /** Método Construtor Vazio */
     public Estado() {
     }
 
@@ -46,14 +51,24 @@ public class Estado {
         this.nome = nome;
     }
 
+    public Cidade[] getCidades() {
+        return cidades;
+    }
+
+    public void setCidades(Cidade[] cidades) {
+        this.cidades = cidades;
+    }
+
     
-    /** Equals e Hash
+    
+    /** Equals e Hash:
      * @return  */
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.id);
-        hash = 29 * hash + Objects.hashCode(this.nome);
+        hash = 97 * hash + Objects.hashCode(this.id);
+        hash = 97 * hash + Objects.hashCode(this.nome);
+        hash = 97 * hash + Arrays.deepHashCode(this.cidades);
         return hash;
     }
 
@@ -72,9 +87,11 @@ public class Estado {
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
-        return Objects.equals(this.id, other.id);
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return Arrays.deepEquals(this.cidades, other.cidades);
     }
-
     
-  
+    
 }

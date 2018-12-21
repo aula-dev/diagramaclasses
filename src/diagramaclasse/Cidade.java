@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Mariana
+ * @author Pedro
  */
 public class Cidade {
     
@@ -17,15 +17,19 @@ public class Cidade {
     private String nome;
     
     private Endereco endereco;
+    
+    private Estado estado;
 
     /**Método Construtor:
      * @param id
      * @param nome
-     * @param endereco */
-    public Cidade(Integer id, String nome, Endereco endereco) {
+     * @param endereco
+     * @param estado */
+    public Cidade(Integer id, String nome, Endereco endereco, Estado estado) {   
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;
+        this.estado = estado;
     }
 
     /**Construtor vazio: */
@@ -59,7 +63,14 @@ public class Cidade {
         this.endereco = endereco;
     }
 
-    
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
     /** Equals e hash
      * @return  */ 
     @Override
@@ -68,6 +79,7 @@ public class Cidade {
         hash = 97 * hash + Objects.hashCode(this.id);
         hash = 97 * hash + Objects.hashCode(this.nome);
         hash = 97 * hash + Objects.hashCode(this.endereco);
+        hash = 97 * hash + Objects.hashCode(this.estado);
         return hash;
     }
 
@@ -89,12 +101,11 @@ public class Cidade {
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
-        return Objects.equals(this.endereco, other.endereco);
+        if (!Objects.equals(this.endereco, other.endereco)) {
+            return false;
+        }
+        return Objects.equals(this.estado, other.estado);
     }
-
-   
-
     
- 
     
 }
