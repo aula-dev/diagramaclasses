@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Mariana
+ * @author Pedro
  */
 public class Cliente {
     private Integer id;

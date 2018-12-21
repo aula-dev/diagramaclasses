@@ -7,7 +7,7 @@ package diagramaclasse;
 
 /**
  *
- * @author Mariana
+ * @author Pedro
  */
 public enum Sexo {
     FEMININO,

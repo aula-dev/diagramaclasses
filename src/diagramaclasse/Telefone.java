@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Mariana
+ * @author Pedro
  */
 public class Telefone {
     private String numero;

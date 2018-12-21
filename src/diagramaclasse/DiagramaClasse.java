@@ -7,7 +7,7 @@ package diagramaclasse;
 
 /**
  *
- * @author Mariana
+ * @author Pedro
  */
 public class DiagramaClasse {
 
