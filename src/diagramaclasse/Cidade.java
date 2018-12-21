@@ -16,6 +16,7 @@ public class Cidade {
     private Integer id;
     private String nome;
     
+    // Segundo o diagrama de classes não há esta referência para a classe Endereco.
     private Endereco endereco;
     
     private Estado estado;
